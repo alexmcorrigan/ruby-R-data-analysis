@@ -11,15 +11,18 @@ def write_row(mail, csv)
 end
 
 EMAILS_TO_RETRIEVE = 100
-USER = ''
-PASSWORD = ''
+
+puts "Username: "
+user = gets.chomp
+puts "Password: "
+password = gets.chomp
 
 Mail.defaults do
   retriever_method :imap,
                    :address => "imap.gmail.com",
                    :port => 993,
-                   :user_name => USER,
-                   :password => PASSWORD,
+                   :user_name => user,
+                   :password => password,
                    :enable_ssl => true
 end
 
